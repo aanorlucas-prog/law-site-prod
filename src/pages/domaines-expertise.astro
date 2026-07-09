@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import CardGroup from "../components/CardGroup.astro";
+
+const steps = [
+  {
+    title: "Premier échange",
+    text: "Comprendre votre situation et identifier vos besoins.",
+  },
+  {
+    title: "Analyse",
+    text: "Étude du dossier et évaluation des enjeux juridiques.",
+  },
+  {
+    title: "Stratégie",
+    text: "Définition de la solution la plus adaptée à vos objectifs.",
+  },
+  {
+    title: "Accompagnement",
+    text: "Mise en œuvre de la stratégie et suivi du dossier.",
+  },
+];
+---
+
+<Layout title="Maître Camille Herlido - Avocat droit des affaires">
+  <p class="text-primary-400">domaines d'expertises</p>
+  <CardGroup items={steps} />
+</Layout>

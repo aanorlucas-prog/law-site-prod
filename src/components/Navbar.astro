@@ -1,0 +1,135 @@
+---
+import logo from "../assets/logo-2.png";
+import { Menu } from "lucide-astro";
+const links = [
+  {
+    label: "Accueil",
+    href: "/",
+  },
+  {
+    label: "À Propos",
+    href: "/a-propos",
+  },
+  {
+    label: "Domaines d'Expertise",
+    href: "/domaines-expertise",
+  },
+  {
+    label: "Honoraires",
+    href: "/honoraires",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
+];
+---
+
+<header class="sticky top-0 z-50 w-full bg-white shadow-sm">
+  <nav
+    class="mx-auto
+      flex
+      max-w-7xl
+      items-center
+      justify-between
+      px-6
+      py-2"
+    aria-label="Navigation principale"
+  >
+    <!-- Logo -->
+    <a href="/" class="flex items-center">
+      <img
+        src={logo.src}
+        alt="Maître Camille Herlido - Avocat en droit des affaires"
+        class="h-14 w-auto"
+      />
+    </a>
+    <!-- Bouton menu mobile -->
+    <button
+      id="menu-button"
+      class="flex
+    items-center
+    justify-center
+    rounded-lg
+    p-2
+    text-primary-900
+    transition
+    hover:bg-primary-50
+    hover:text-primary-600
+    md:hidden"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+    >
+      <Menu class="h-6 w-6" />
+    </button>
+
+    <!-- Menu desktop -->
+    <ul class="hidden
+        items-center
+        gap-8
+        md:flex">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="
+                text-sm
+                font-medium
+                text-primary-900
+                transition
+                hover:text-primary-500 hover:underline hover:decoration-primary-400  hover:underline-offset-4
+    hover:decoration-2"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <!-- Menu mobile -->
+  <div
+    id="mobile-menu"
+    class="hidden
+      border-t
+      border-neutral-200
+      px-6
+      py-6
+      md:hidden"
+  >
+    <ul class="flex flex-col gap-5 text-center">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="
+                block
+                text-primary-900
+                 hover:text-primary-500 hover:underline hover:decoration-primary-400  hover:underline-offset-4
+    hover:decoration-2"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <script is:inline>
+    document.addEventListener("astro:page-load", () => {
+      const button = document.querySelector("#menu-button");
+      const menu = document.querySelector("#mobile-menu");
+
+      if (!button || !menu) return;
+
+      button.onclick = () => {
+        const isOpen = menu.classList.toggle("hidden");
+        button.setAttribute("aria-expanded", String(!isOpen));
+      };
+    });
+  </script>
+</header>

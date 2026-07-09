@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  text: string;
+  bgClass?: string;
+  titleClass?: string;
+  textClass?: string;
+}
+
+const {
+  title,
+  text,
+  bgClass = "",
+  titleClass = "",
+  textClass = "",
+} = Astro.props;
+---
+
+<article
+  class:list={[
+    "flex flex-col justify-center rounded-lg p-6 text-center min-h-[220px]",
+    bgClass,
+  ]}
+>
+  <h3 class:list={["mb-6 text-lg font-semibold", titleClass]}>
+    {title}
+  </h3>
+
+  <p class:list={["text-sm leading-relaxed", textClass]}>
+    {text}
+  </p>
+</article>

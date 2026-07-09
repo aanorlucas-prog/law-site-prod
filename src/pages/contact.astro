@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FaqSection from "../components/FAQ.astro";
+import CtaSection from "../components/CTA.astro";
+---
+
+<Layout title="Maître Camille Herlido - Avocat droit des affaires">
+  <p class="text-primary-400">contact</p>
+  <FaqSection
+    title="Questions fréquentes"
+    items={[
+      {
+        question: "Quand consulter un avocat en droit des affaires ?",
+        answer:
+          "Le cabinet accompagne également les entreprises dans la prévention des risques et la sécurisation de leurs relations contractuelles.",
+      },
+      {
+        question: "Les honoraires sont-ils définis à l'avance ?",
+        answer:
+          "Oui, une convention d'honoraires est établie dès le début de la mission.",
+      },
+      {
+        question: "Intervenez-vous uniquement en cas de contentieux ?",
+        answer:
+          "Non, le cabinet accompagne également les entreprises dans la prévention des risques.",
+      },
+    ]}
+  />
+  <CtaSection
+    title="Une question juridique ?"
+    description="Parlons de votre situation et trouvons ensemble la stratégie la plus adaptée à vos besoins."
+  />
+</Layout>

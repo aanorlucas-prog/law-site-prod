@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  /* =========================
+     Primary
+  ========================= */
+
+  --color-primary-50: #f5f8ff;
+  --color-primary-100: #e7efff;
+  --color-primary-200: #d6e3ff;
+  --color-primary-300: #c3d6ff;
+  --color-primary-400: #abc4ff;
+  --color-primary-500: #7fa3f8;
+  --color-primary-600: #4a6fa5;
+  --color-primary-700: #365683;
+  --color-primary-800: #2f4f7f;
+  --color-primary-900: #1f2937;
+
+  /* ==========================================
+     Success
+     ========================================== */
+
+  --color-success-50: #edf8ef;
+  --color-success-100: #d7f0dd;
+  --color-success-200: #b0e1bc;
+  --color-success-300: #81cc91;
+  --color-success-400: #57b56b;
+  --color-success-500: #2e7d32;
+  --color-success-600: #276a2b;
+  --color-success-700: #205623;
+  --color-success-800: #1a441d;
+  --color-success-900: #153617;
+
+  /* ==========================================
+     Error
+     ========================================== */
+
+  --color-error-50: #fdeeee;
+  --color-error-100: #fbd6d6;
+  --color-error-200: #f5b0b0;
+  --color-error-300: #ee8383;
+  --color-error-400: #e45a5a;
+  --color-error-500: #c62828;
+  --color-error-600: #aa2222;
+  --color-error-700: #8a1b1b;
+  --color-error-800: #6d1616;
+  --color-error-900: #571212;
+
+  /* ==========================================
+     Warning
+     ========================================== */
+
+  --color-warning-50: #fff8e8;
+  --color-warning-100: #feedbe;
+  --color-warning-200: #fde08a;
+  --color-warning-300: #facc4d;
+  --color-warning-400: #f7b51f;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d88306;
+  --color-warning-700: #b46807;
+  --color-warning-800: #93520d;
+  --color-warning-900: #79440e;
+
+  /* ==========================================
+     Backgrounds
+     ========================================== */
+
+  --color-warm-1: #faf7f2;
+  --color-warm-2: #f7f3ee;
+  --color-warm-3: #f4ede4;
+}
