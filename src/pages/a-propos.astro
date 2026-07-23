@@ -23,95 +23,124 @@ const values = [
 ---
 
 <Layout title="Maître Camille Herlido - Avocat droit des affaires">
-  <!-- revoir responsive de cette section -->
   <!-- Hero -->
-  <section
-    class="flex flex-col items-center justify-center text-center px-18 pt-14 pb-18 bg-primary-200 gap-6"
-  >
-    <h1 class="text-primary-800 text-2xl">À Propos</h1>
-    <h2 class="text-primary-700 text-lg">
-      Une approche stratégique du droit des affaires au service des entreprises.
-    </h2>
-    <p class="text-primary-900">
-      J'accompagne les dirigeants et les entreprises dans la prévention des
-      risques, la résolution des litiges et la sécurisation de leurs décisions.
-    </p>
+  <section class="bg-primary-200 py-16 lg:py-24">
+    <div class="mx-auto max-w-4xl px-6 text-center lg:px-8">
+      <h1 class="text-3xl font-light text-primary-800 lg:text-5xl">À Propos</h1>
+      <h2 class="mt-6 text-xl text-primary-700 lg:text-2xl">
+        Une approche stratégique du droit des affaires au service des
+        entreprises.
+      </h2>
+      <p class="mx-auto mt-6 max-w-3xl text-lg leading-8 text-primary-900">
+        J'accompagne les dirigeants et les entreprises dans la prévention des
+        risques, la résolution des litiges et la sécurisation de leurs
+        décisions.
+      </p>
+    </div>
   </section>
-  <!-- revoir responsive de cette section -->
   <!-- Photo -->
-  <section
-    class="flex flex-col items-center justify-center p-8 pt-12 bg-white gap-6"
-  >
-    <h1 class="text-primary-700 font-light text-3xl">Maître Camille Herlido</h1>
-    <div class="flex flex-row items-center justify-center gap-4 p-4">
-      <div class="flex flex-col items-center justify-center gap-4 px-10">
-        <h2 class="text-primary-800 text-lg">
+  <section class="bg-white py-20 lg:py-24">
+    <div
+      class="mx-auto flex max-w-7xl flex-col-reverse items-center text-center gap-12 px-6 lg:flex-row lg:gap-20 lg:px-8"
+    >
+      <!-- Texte -->
+      <div class="max-w-2xl space-y-6">
+        <h2 class="text-3xl font-light text-primary-700 lg:text-4xl pb-16">
+          Maître Camille Herlido
+        </h2>
+
+        <p class="text-xl text-primary-800">
           Avocate au Barreau de Saint-Brieuc, j'exerce exclusivement en droit
           des affaires.
-        </h2>
-        <p class="text-primary-900">
+        </p>
+
+        <p class="leading-8 text-primary-900">
           J'accompagne les entreprises et leurs dirigeants dans la gestion de
           leurs problématiques juridiques, qu'il s'agisse de prévention des
           risques, de contentieux ou d'accompagnement stratégique.
         </p>
       </div>
-      <img src={photo.src} alt="Photo de Camille Herlido" class="h-64 w-auto" />
+
+      <!-- Photo -->
+      <div class="shrink-0">
+        <img
+          src={photo.src}
+          alt="Portrait de Maître Camille Herlido, avocate en droit des affaires"
+          class="w-64 rounded-2xl object-cover shadow-lg sm:w-80 lg:w-[420px] xl:w-[500px]"
+        />
+      </div>
     </div>
   </section>
-  <!-- revoir responsive de cette section -->
+
   <!-- parcours -->
-  <section
-    class="flex flex-col items-center justify-center text-center p-16 bg-warm-3 gap-10"
-  >
-    <h2 class="text-primary-700 text-xl pb-4">
-      Un parcours dédié au droit des affaires
-    </h2>
-    <p class="text-primary-900">
-      Titulaire d'un Master 1 en droit des affaires et d'un Master 2 en droit
-      privé général, parcours droit des affaires, j'ai exercé pendant plus de
-      sept années au sein de cabinets spécialisés en droit des affaires, en
-      conseil comme en contentieux.
-    </p>
-    <p class="text-primary-900">
-      Cette expérience m'a permis d'accompagner des entreprises confrontées à
-      des problématiques variées et d'acquérir une vision globale des enjeux
-      auxquels elles sont confrontées.
-    </p>
-  </section>
-  <!-- revoir responsive de cette section -->
-  <!-- valeurs -->
-  <section
-    class="flex flex-col items-center justify-center text-center p-16 bg-white gap-10"
-  >
-    <h2 class="text-primary-700 text-xl">Les valeurs du cabinet</h2>
-    <CardGroup items={values} />
-  </section>
-  <!-- revoir responsive de cette section -->
-  <!-- CTA -->
-  <section
-    class="flex flex-col items-center justify-center text-center bg-warm-2 p-16 gap-10"
-  >
-    <p class="text-primary-900">
-      Chaque entreprise et chaque personne est différente.
-    </p>
-    <p class="text-primary-900">
-      C'est pourquoi chaque accompagnement est construit de manière
-      personnalisée, en tenant compte des objectifs, des contraintes et des
-      enjeux propres à chaque situation.
-    </p>
-    <a
-      href="/contact"
-      class="w-56
-          text-center
-        rounded-lg
-          bg-primary-600
-          px-8
-          py-3
-          text-white
-          transition
-          hover:bg-primary-700"
+  <section class="bg-warm-3 py-20 lg:py-24">
+    <div
+      class="mx-auto max-w-4xl px-6 lg:px-8 flex flex-col items-center text-center"
     >
-      Me contacter
-    </a>
+      <h2
+        class="text-center text-2xl font-semibold text-primary-700 lg:text-3xl"
+      >
+        Un parcours dédié au droit des affaires
+      </h2>
+
+      <div class="mt-10 space-y-6 text-lg leading-8 text-primary-900">
+        <p>
+          Titulaire d'un Master 1 en droit des affaires et d'un Master 2 en
+          droit privé général, parcours droit des affaires, j'ai exercé pendant
+          plus de sept années au sein de cabinets spécialisés en droit des
+          affaires, en conseil comme en contentieux.
+        </p>
+
+        <p>
+          Cette expérience m'a permis d'accompagner des entreprises confrontées
+          à des problématiques variées et d'acquérir une vision globale des
+          enjeux auxquels elles sont confrontées.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- valeurs -->
+  <section class="bg-white py-20 lg:py-24">
+    <div class="mx-auto max-w-7xl px-20 lg:px-24">
+      <h2
+        class="mb-12 text-center text-3xl font-light text-primary-700 lg:text-3xl"
+      >
+        Les valeurs du cabinet
+      </h2>
+
+      <CardGroup items={values} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-warm-2 py-20 lg:py-24">
+    <div
+      class="mx-auto flex max-w-3xl flex-col items-center px-6 text-center lg:px-8"
+    >
+      <h2 class="text-2xl font-light text-primary-800 lg:text-3xl">
+        Un accompagnement adapté à votre situation
+      </h2>
+
+      <div class="mt-8 space-y-6 text-lg leading-8 text-primary-900">
+        <p>
+          Chaque entreprise et chaque dirigeant sont confrontés à des enjeux qui
+          leur sont propres.
+        </p>
+
+        <p>
+          C'est pourquoi chaque accompagnement est construit de manière
+          personnalisée, en tenant compte des objectifs, des contraintes et des
+          enjeux propres à chaque situation.
+        </p>
+      </div>
+
+      <a
+        href="/contact"
+        class="mt-10 w-full rounded-lg bg-primary-600 px-8 py-3 text-center text-white transition hover:bg-primary-700 sm:w-56"
+      >
+        Prendre contact
+      </a>
+    </div>
   </section>
 </Layout>
