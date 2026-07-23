@@ -1,33 +1,345 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import FaqSection from "../components/FAQ.astro";
-import CtaSection from "../components/CTA.astro";
+import Hero from "../components/Hero.astro";
+import heroImage from "../assets/image2.jpg";
+import { Phone, Mail, MapPin, Linkedin } from "lucide-astro";
+const formId = "contact-form";
 ---
 
 <Layout title="Maître Camille Herlido - Avocat droit des affaires">
   <p class="text-primary-400">contact</p>
+  <!-- Hero -->
+  <Hero
+    title="Contact"
+    description="Vous souhaitez être accompagné dans une problématique de droit des affaires ou obtenir un premier échange ?
+    N'hésitez pas à prendre contact avec le cabinet."
+    image={heroImage}
+  />
+  <!-- parlons -->
+  <section
+    class="bg-warm-2 flex flex-col items-center justify-center text-center p-16 gap-8"
+  >
+    <h2 class="text-primary-700 text-2xl">Parlons de votre situation</h2>
+    <p class="text-primary-900">
+      Chaque dossier est unique. Un premier échange permet de comprendre votre
+      situation, d'identifier vos besoins et de vous orienter vers la solution
+      la plus adaptée.
+    </p>
+  </section>
+  <!-- infos contact -->
+  <section
+    class="flex flex-col items-center justify-center text-center p-16 gap-14"
+  >
+    <div class="flex flex-col gap-6 md:flex-row">
+      <div
+        class="bg-primary-50 flex flex-col items-center justify-center rounded-lg p-8 text-center min-h-[220px]"
+      >
+        <div class="flex flex-row gap-4">
+          <Phone class="h-5 w-5 text-primary-800" />
+          <h3 class="text-primary-800">Téléphone</h3>
+        </div>
+        <p class="text-primary-900">06 31 49 98 46</p>
+      </div>
+      <div
+        class="bg-primary-100 flex flex-col items-center justify-center rounded-lg p-8 text-center min-h-[220px]"
+      >
+        <div class="flex flex-row gap-4">
+          <Mail class="h-5 w-5 text-primary-800" />
+          <h3 class="text-primary-800">Email</h3>
+        </div>
+        <p class="text-primary-900">contact@herlido-avocat.fr</p>
+      </div>
+      <div
+        class="bg-primary-200 flex flex-col items-center justify-center rounded-lg p-8 text-center min-h-[220px]"
+      >
+        <div class="flex flex-row gap-4">
+          <MapPin class="h-5 w-5 text-primary-800" />
+          <h3 class="text-primary-800">Cabinet</h3>
+        </div>
+        <p class="text-primary-900">2 rue François Jacob<br /> 22190 Plérin</p>
+      </div>
+    </div>
+    <p class="text-primary-900">
+      Vous souhaitez prendre rendez-vous directement ?
+    </p>
+    <a
+      href="/contact"
+      class="w-56
+          text-center
+        rounded-lg
+          bg-primary-600
+          px-8
+          py-3
+          text-white
+          transition
+          hover:bg-primary-700"
+    >
+      Prendre rendez-vous sur avocat.fr
+    </a>
+  </section>
+  <!-- horaires -->
+  <section
+    class="bg-warm-2 flex flex-col items-center justify-center text-center p-16 gap-6"
+  >
+    <h2 class="text-primary-700 text-2xl mb-4">Horaires d’ouverture</h2>
+    <div>
+      <p class="text-primary-800">Lundi - Vendredi</p>
+      <p class="text-primary-900">9h - 18h</p>
+    </div>
+    <div>
+      <p class="text-primary-800">Samedi</p>
+      <p class="text-primary-900">Sur demande</p>
+    </div>
+    <div>
+      <p class="text-primary-800">Dimanche</p>
+      <p class="text-primary-900">Fermé</p>
+    </div>
+  </section>
+  <!-- accessibilité -->
+  <section
+    class="bg-white flex flex-col items-center justify-center text-center p-16 gap-6"
+  >
+    <h2 class="text-primary-700 text-2xl">Accessibilité</h2>
+    <p class="text-primary-900">
+      Le cabinet est attentif à l'accueil de toutes les personnes. Si vous avez
+      besoin d'un aménagement particulier lors de votre rendez-vous, n'hésitez
+      pas à nous en informer en amont.
+    </p>
+  </section>
+  <!-- formulaire contact -->
+  <section
+    class="mx-auto
+  w-full
+    px-16
+    py-16 bg-warm-1 flex flex-col items-center"
+  >
+    <h2
+      class="mb-10
+      text-center
+      text-4xl
+      font-light
+      
+      text-primary-800"
+    >
+      Nous écrire
+    </h2>
+
+    <form id={formId} class="space-y-6 max-w-3xl">
+      <div>
+        <label for="name" class="mb-2 block text-sm text-primary-900">
+          Nom et Prénom *
+        </label>
+
+        <input
+          id="name"
+          name="name"
+          required
+          class="w-full
+          rounded-lg
+          border
+          border-neutral-200
+          bg-white
+          px-4
+          py-3
+          shadow-sm
+          outline-none
+          focus:border-primary-400
+          text-primary-900"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="mb-2 block text-sm text-primary-900">
+          Adresse e-mail *
+        </label>
+
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          class="w-full
+          rounded-lg
+          border
+          border-neutral-200
+          bg-white
+          px-4
+          py-3
+          shadow-sm
+          outline-none
+          focus:border-primary-400
+          text-primary-900"
+        />
+      </div>
+
+      <div>
+        <label for="phone" class="mb-2 block text-sm text-primary-900">
+          Téléphone (facultatif)
+        </label>
+
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          class="w-full
+          rounded-lg
+          border
+          border-neutral-200
+          bg-white
+          px-4
+          py-3
+          shadow-sm
+          outline-none
+          focus:border-primary-400
+          text-primary-900"
+        />
+      </div>
+
+      <div>
+        <label for="subject" class="mb-2 block text-sm text-primary-900">
+          Objet
+        </label>
+
+        <input
+          id="subject"
+          name="subject"
+          class="w-full
+          rounded-lg
+          border
+          border-neutral-200
+          bg-white
+          px-4
+          py-3
+          shadow-sm
+          outline-none
+          focus:border-primary-400
+          text-primary-900"
+        />
+      </div>
+
+      <div>
+        <label for="message" class="mb-2 block text-sm text-primary-900">
+          Votre message *
+        </label>
+
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows="6"
+          class="w-full
+          rounded-lg
+          border
+          border-neutral-200
+          bg-white
+          px-4
+          py-3
+          shadow-sm
+          outline-none
+          focus:border-primary-400
+          text-primary-900"
+        ></textarea>
+      </div>
+
+      <label class="flex items-start gap-3">
+        <input
+          id="consent"
+          name="consent"
+          type="checkbox"
+          required
+          class="mt-1 h-5 w-5"
+        />
+
+        <span class="text-sm text-primary-700">
+          J'accepte que les informations saisies soient utilisées pour répondre
+          à ma demande, conformément à la politique de confidentialité.
+        </span>
+      </label>
+
+      <div id="form-message" class="hidden rounded-lg p-4 text-center"></div>
+
+      <div class="text-center">
+        <button
+          type="submit"
+          class="rounded-lg
+          bg-primary-600
+          px-8
+          py-3
+          text-white
+          transition
+          hover:bg-primary-700"
+        >
+          Envoyer ma demande
+        </button>
+      </div>
+
+      <p class="text-center
+        text-xs
+        text-neutral-500">
+        Les informations transmises via ce formulaire sont utilisées uniquement
+        pour répondre à votre demande.
+      </p>
+    </form>
+  </section>
+
   <FaqSection
     title="Questions fréquentes"
     items={[
       {
-        question: "Quand consulter un avocat en droit des affaires ?",
+        question: "Sous quel délai recevrai-je une réponse ?",
         answer:
-          "Le cabinet accompagne également les entreprises dans la prévention des risques et la sécurisation de leurs relations contractuelles.",
+          "Le cabinet s'efforce de répondre aux demandes dans les meilleurs délais.",
       },
       {
-        question: "Les honoraires sont-ils définis à l'avance ?",
+        question: "Le premier échange est-il un engagement ?",
         answer:
-          "Oui, une convention d'honoraires est établie dès le début de la mission.",
+          "Non. Il permet d'analyser votre situation et de déterminer les modalités d'un éventuel accompagnement.",
       },
       {
-        question: "Intervenez-vous uniquement en cas de contentieux ?",
+        question: "Puis-je prendre rendez-vous directement ?",
         answer:
-          "Non, le cabinet accompagne également les entreprises dans la prévention des risques.",
+          "Oui. Vous pouvez utiliser le lien vers avocat.fr ou contacter directement le cabinet.",
       },
     ]}
   />
-  <CtaSection
-    title="Une question juridique ?"
-    description="Parlons de votre situation et trouvons ensemble la stratégie la plus adaptée à vos besoins."
-  />
 </Layout>
+<!-- <script>
+  const form = document.querySelector("#contact-form");
+  const feedback = document.querySelector("#form-message");
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    feedback.classList.add("hidden");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      feedback.textContent = data.message;
+
+      feedback.classList.remove("hidden");
+
+      if (response.ok) {
+        feedback.className =
+          "rounded-lg bg-green-100 p-4 text-center text-green-700";
+
+        form.reset();
+      } else {
+        feedback.className =
+          "rounded-lg bg-red-100 p-4 text-center text-red-700";
+      }
+    } catch {
+      feedback.textContent = "Une erreur est survenue. Veuillez réessayer.";
+
+      feedback.className = "rounded-lg bg-red-100 p-4 text-center text-red-700";
+    }
+  });
+</script> -->

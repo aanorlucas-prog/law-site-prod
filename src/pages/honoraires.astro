@@ -1,7 +1,115 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import heroImage from "../assets/image2.jpg";
+import CTA from "../components/CTA.astro";
+import FAQ from "../components/FAQ.astro";
+import CardGroup from "../components/CardGroup.astro";
+const data = [
+  {
+    title: "Complexité du dossier",
+    text: "Chaque dossier présente des enjeux juridiques qui lui sont propres.",
+  },
+  {
+    title: "Temps consacré",
+    text: "Les honoraires tiennent compte du temps nécessaire au traitement du dossier.",
+  },
+  {
+    title: "Nature de la mission",
+    text: "Conseil, contentieux, audit ou accompagnement stratégique.",
+  },
+  {
+    title: "Enjeux du dossier",
+    text: "Les intérêts économiques et juridiques sont également pris en considération.",
+  },
+];
+const method = [
+  {
+    title: "Forfait",
+    text: "Lorsque la nature de la mission le permet, un honoraire forfaitaire peut être proposé.",
+  },
+  {
+    title: "Convention adaptée",
+    text: "Selon les besoins du client et la nature de la mission, une solution personnalisée peut être envisagée dans le respect des règles déontologiques.",
+  },
+];
 ---
 
 <Layout title="Maître Camille Herlido - Avocat droit des affaires">
-  <p class="text-primary-400">honoraires</p>
+  <!-- Hero -->
+  <Hero
+    title="Honoraires"
+    description="Une relation de confiance repose également sur une information claire et transparente concernant les honoraires."
+    image={heroImage}
+  />
+  <!-- revoir responsive de cette section -->
+  <!-- transparence -->
+  <section class="flex flex-col items-center text-center p-18 bg-warm-1 gap-8">
+    <h2 class="text-primary-700 text-xl">La transparence avant tout</h2>
+    <p class="text-primary-900">
+      Les honoraires du cabinet sont déterminés conformément aux règles
+      déontologiques applicables à la profession d'avocat.
+    </p>
+    <p class="text-primary-900">
+      Avant toute intervention, une convention d'honoraires est proposée afin de
+      définir les modalités de rémunération et de garantir une parfaite
+      transparence.
+    </p>
+  </section>
+  <!-- revoir responsive de cette section -->
+  <!-- critères -->
+  <section class="flex flex-col items-center p-18 bg-white gap-8">
+    <h2 class="text-primary-700 text-xl">Les critères pris en compte</h2>
+    <CardGroup items={data} />
+  </section>
+  <!-- revoir responsive de cette section -->
+  <!-- convention d'honoraire -->
+  <section class="flex flex-col items-center text-center p-18 bg-warm-2 gap-4">
+    <h2 class="text-primary-700 text-2xl pb-8">
+      Une convention d'honoraires systématiquement proposée
+    </h2>
+    <p class="text-primary-900">
+      Avant toute intervention, une convention d'honoraires est remise au
+      client.
+    </p>
+    <p class="text-primary-900">Elle précise notamment :</p>
+    <ul class="list-disc space-y-2 pl-6 text-left text-primary-900">
+      <li>la mission confiée</li>
+      <li>les modalités de calcul des honoraires</li>
+      <li>les frais éventuels</li>
+      <li>les conditions d'intervention</li>
+    </ul>
+  </section>
+  <!-- revoir responsive de cette section -->
+  <!-- modes de facturation -->
+  <section class="flex flex-col items-center p-18 bg-white gap-8">
+    <h2 class="text-primary-700 text-xl">Les modalités de facturation</h2>
+    <CardGroup items={method} />
+  </section>
+
+  <FAQ
+    title="Questions fréquentes"
+    items={[
+      {
+        question:
+          "Les honoraires sont-ils communiqués avant toute intervention ?",
+        answer:
+          "Oui. Les modalités de facturation sont définies dans une convention d'honoraires remise avant le début de la mission.",
+      },
+      {
+        question: "Puis-je demander un devis ?",
+        answer:
+          "Selon la nature de votre demande, une estimation ou un forfait pourra être envisagé après un premier échange.",
+      },
+      {
+        question: "Comment se déroule le premier échange ?",
+        answer:
+          "Le premier échange permet de comprendre votre situation, d'identifier vos besoins et de vous informer sur les modalités d'intervention du cabinet.",
+      },
+    ]}
+  />
+  <CTA
+    title="Une question concernant les honoraires ?"
+    description="N'hésitez pas à prendre contact afin d'échanger sur votre situation et les modalités d'accompagnement envisageables."
+  />
 </Layout>

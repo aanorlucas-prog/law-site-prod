@@ -1,7 +1,117 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import CardGroup from "../components/CardGroup.astro";
+import photo from "../assets/camille.jpg";
+const values = [
+  {
+    title: "Écoute",
+    text: "Chaque situation est unique et mérite une attention particulière.",
+  },
+  {
+    title: "Rigueur",
+    text: "Une analyse juridique approfondie pour sécuriser les décisions.",
+  },
+  {
+    title: "Réactivité",
+    text: "Répondre rapidement aux enjeux des entreprises.",
+  },
+  {
+    title: "Confidentialité",
+    text: "Garantir la discrétion indispensable à la relation de confiance.",
+  },
+];
 ---
 
 <Layout title="Maître Camille Herlido - Avocat droit des affaires">
-  <p class="text-primary-400">a propos</p>
+  <!-- revoir responsive de cette section -->
+  <!-- Hero -->
+  <section
+    class="flex flex-col items-center justify-center text-center px-18 pt-14 pb-18 bg-primary-200 gap-6"
+  >
+    <h1 class="text-primary-800 text-2xl">À Propos</h1>
+    <h2 class="text-primary-700 text-lg">
+      Une approche stratégique du droit des affaires au service des entreprises.
+    </h2>
+    <p class="text-primary-900">
+      J'accompagne les dirigeants et les entreprises dans la prévention des
+      risques, la résolution des litiges et la sécurisation de leurs décisions.
+    </p>
+  </section>
+  <!-- revoir responsive de cette section -->
+  <!-- Photo -->
+  <section
+    class="flex flex-col items-center justify-center p-8 pt-12 bg-white gap-6"
+  >
+    <h1 class="text-primary-700 font-light text-3xl">Maître Camille Herlido</h1>
+    <div class="flex flex-row items-center justify-center gap-4 p-4">
+      <div class="flex flex-col items-center justify-center gap-4 px-10">
+        <h2 class="text-primary-800 text-lg">
+          Avocate au Barreau de Saint-Brieuc, j'exerce exclusivement en droit
+          des affaires.
+        </h2>
+        <p class="text-primary-900">
+          J'accompagne les entreprises et leurs dirigeants dans la gestion de
+          leurs problématiques juridiques, qu'il s'agisse de prévention des
+          risques, de contentieux ou d'accompagnement stratégique.
+        </p>
+      </div>
+      <img src={photo.src} alt="Photo de Camille Herlido" class="h-64 w-auto" />
+    </div>
+  </section>
+  <!-- revoir responsive de cette section -->
+  <!-- parcours -->
+  <section
+    class="flex flex-col items-center justify-center text-center p-16 bg-warm-3 gap-10"
+  >
+    <h2 class="text-primary-700 text-xl pb-4">
+      Un parcours dédié au droit des affaires
+    </h2>
+    <p class="text-primary-900">
+      Titulaire d'un Master 1 en droit des affaires et d'un Master 2 en droit
+      privé général, parcours droit des affaires, j'ai exercé pendant plus de
+      sept années au sein de cabinets spécialisés en droit des affaires, en
+      conseil comme en contentieux.
+    </p>
+    <p class="text-primary-900">
+      Cette expérience m'a permis d'accompagner des entreprises confrontées à
+      des problématiques variées et d'acquérir une vision globale des enjeux
+      auxquels elles sont confrontées.
+    </p>
+  </section>
+  <!-- revoir responsive de cette section -->
+  <!-- valeurs -->
+  <section
+    class="flex flex-col items-center justify-center text-center p-16 bg-white gap-10"
+  >
+    <h2 class="text-primary-700 text-xl">Les valeurs du cabinet</h2>
+    <CardGroup items={values} />
+  </section>
+  <!-- revoir responsive de cette section -->
+  <!-- CTA -->
+  <section
+    class="flex flex-col items-center justify-center text-center bg-warm-2 p-16 gap-10"
+  >
+    <p class="text-primary-900">
+      Chaque entreprise et chaque personne est différente.
+    </p>
+    <p class="text-primary-900">
+      C'est pourquoi chaque accompagnement est construit de manière
+      personnalisée, en tenant compte des objectifs, des contraintes et des
+      enjeux propres à chaque situation.
+    </p>
+    <a
+      href="/contact"
+      class="w-56
+          text-center
+        rounded-lg
+          bg-primary-600
+          px-8
+          py-3
+          text-white
+          transition
+          hover:bg-primary-700"
+    >
+      Me contacter
+    </a>
+  </section>
 </Layout>

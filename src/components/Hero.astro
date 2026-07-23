@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+}
+
+const { title, description, image } = Astro.props;
+---
+
+<section class="relative isolate overflow-hidden">
+  <Image
+    src={image}
+    alt=""
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+
+  <div class="absolute inset-0 bg-primary-400/75"></div>
+
+  <div
+    class="relative
+      mx-auto
+      flex
+      min-h-[420px]
+      max-w-7xl
+      flex-col
+      items-center
+      justify-center
+      px-6
+      py-16
+      text-center"
+  >
+    <h1 class="mb-10 text-3xl font-light text-primary-800 md:text-5xl">
+      {title}
+    </h1>
+
+    <p class="max-w-2xl text-lg leading-relaxed text-primary-900 md:text-2xl">
+      {description}
+    </p>
+  </div>
+</section>

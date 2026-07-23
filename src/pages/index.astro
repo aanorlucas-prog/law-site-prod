@@ -1,13 +1,339 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Hero from "../components/Hero.astro";
-
 import CTA from "../components/CTA.astro";
+import FAQ from "../components/FAQ.astro";
+import CardGroup from "../components/CardGroup.astro";
+
+const steps = [
+  {
+    title: "Premier échange",
+    text: "Comprendre votre situation et identifier vos besoins.",
+  },
+  {
+    title: "Analyse",
+    text: "Étude du dossier et évaluation des enjeux juridiques.",
+  },
+  {
+    title: "Stratégie",
+    text: "Définition de la solution la plus adaptée à vos objectifs.",
+  },
+  {
+    title: "Accompagnement",
+    text: "Mise en œuvre de la stratégie et suivi du dossier.",
+  },
+];
+const stepsDom = [
+  {
+    title: "Contentieux des affaires",
+    text: "Accompagnement dans les litiges commerciaux, contractuels et les conflits liés à la vie des entreprises.",
+  },
+  {
+    title: "Audit et sécurisation des contrats",
+    text: "Analyse des contrats et identification des risques afin de sécuriser vos relations commerciales.",
+  },
+  {
+    title: "Conseil en droit des affaires",
+    text: "Accompagnement juridique des entreprises dans leurs décisions stratégiques et pré-contentieuses",
+  },
+];
+import logo from "../assets/dark-logo-2.png";
+
+import image from "../assets/image2.jpg";
+import image2 from "../assets/image1.webp";
+import { Check } from "lucide-astro";
 ---
 
 <Layout title="Maître Camille Herlido - Avocat droit des affaires">
-  <Hero />
-  <p class="text-primary-400">textedddd</p>
-  <CTA />
+  <!-- revoir responsive de cette section -->
+  <!-- Hero -->
+  <section class="relative isolate overflow-hidden">
+    <img
+      src={image.src}
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 h-full w-full object-cover"
+    />
+
+    <div class="absolute inset-0 bg-primary-400/75"></div>
+
+    <div
+      class="relative mx-auto flex min-h-[520px] max-w-7xl flex-col justify-center px-6 pb-16 lg:px-8"
+    >
+      <!-- Logo + identité -->
+      <div
+        class="flex flex-col items-center gap-4 text-center lg:flex-row lg:justify-center lg:gap-10 lg:text-left"
+      >
+        <img
+          src={logo.src}
+          alt="Logo du cabinet de Maître Camille Herlido"
+          width={logo.width}
+          height={logo.height}
+          class="h-64 w-auto lg:h-70"
+        />
+
+        <div class="space-y-2">
+          <h1 class="text-3xl font-light text-primary-900 lg:text-5xl">
+            Maître Camille HERLIDO
+          </h1>
+
+          <p class="text-lg text-primary-900 lg:text-2xl">
+            Avocate en droit des affaires
+          </p>
+        </div>
+      </div>
+
+      <!-- Accroche -->
+      <div class="mx-auto mt-12 max-w-3xl space-y-6 text-center">
+        <h2 class="text-2xl font-semibold text-primary-700 lg:text-4xl">
+          Contentieux stratégique & droit des affaires
+        </h2>
+
+        <p class="text-lg leading-8 text-primary-900">
+          Anticiper les risques. Défendre vos intérêts. Sécuriser vos décisions.
+        </p>
+      </div>
+
+      <!-- Boutons -->
+      <div
+        class="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+      >
+        <a
+          href="/contact"
+          class="w-full rounded-lg bg-primary-600 px-8 py-3 text-center text-white transition hover:bg-primary-700 sm:w-56"
+        >
+          Me contacter
+        </a>
+
+        <a
+          href="/contact"
+          class="w-full rounded-lg border border-primary-600 px-8 py-3 text-center text-primary-700 transition hover:bg-primary-50 sm:w-56"
+        >
+          Prendre rendez-vous
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- revoir responsive de cette section -->
+  <!-- approche stratégique -->
+  <section class="bg-warm-2 py-20 lg:py-24">
+    <div
+      class="mx-auto flex max-w-7xl flex-col items-center px-6 lg:px-8 gap-10"
+    >
+      <h2
+        class="text-center text-2xl font-semibold text-primary-600 lg:text-3xl"
+      >
+        Une approche stratégique du droit des affaires
+      </h2>
+
+      <p class="mt-8 max-w-3xl text-center text-lg leading-8 text-primary-900">
+        Chaque entreprise est confrontée à des décisions qui peuvent avoir des
+        conséquences juridiques importantes. Mon rôle est de vous accompagner
+        afin d'anticiper les risques, défendre vos intérêts et sécuriser vos
+        décisions.
+      </p>
+
+      <ul class="mx-auto grid grid-cols-1 gap-x-16 gap-y-6 sm:grid-cols-2">
+        <li class="flex items-center text-center gap-3">
+          <Check class="h-6 w-6 shrink-0 text-primary-500" />
+          <span class="text-primary-900"> Accompagnement personnalisé </span>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <Check class="h-6 w-6 shrink-0 text-primary-500" />
+          <span class="text-primary-900"> Réactivité </span>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <Check class="h-6 w-6 shrink-0 text-primary-500" />
+          <span class="text-primary-900"> Analyse stratégique </span>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <Check class="h-6 w-6 shrink-0 text-primary-500" />
+          <span class="text-primary-900"> Défense de vos intérêts </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- revoir responsive de cette section -->
+  <!-- domaines d'expertises -->
+  <section class="py-20 lg:py-24">
+    <div class="mx-auto flex max-w-7xl flex-col items-center px-6 lg:px-8">
+      <h2
+        class="w-full text-center text-2xl font-semibold text-primary-800 lg:text-3xl"
+      >
+        Domaines d'expertise
+      </h2>
+
+      <div class="mt-10 w-full">
+        <CardGroup items={stepsDom} />
+      </div>
+
+      <p class="mt-12 max-w-3xl text-center text-lg leading-8 text-primary-900">
+        Découvrez l'ensemble des domaines d'expertise du cabinet.
+      </p>
+
+      <a
+        href="/domaines-expertise"
+        class="mt-8 w-full rounded-lg bg-primary-600 px-8 py-3 text-center text-white transition hover:bg-primary-700 sm:w-56"
+      >
+        Découvrir les domaines d'expertise
+      </a>
+    </div>
+  </section>
+  <!-- revoir responsive de cette section + ref button -->
+  <!-- difficulté? -->
+  <section
+    class="flex flex-col items-center justify-center bg-warm-3 p-16 gap-12"
+  >
+    <div class="flex flex-col items-center justify-center gap-6">
+      <h2 class="text-primary-800 text-xl">Vous rencontrez une difficulté ?</h2>
+      <h3 class="text-primary-800 text-xl">
+        Vous souhaitez avoir un avis sur un document ?
+      </h3>
+    </div>
+
+    <a
+      href="/contact"
+      class="w-56
+          text-center
+        rounded-lg
+          bg-primary-600
+          px-8
+          py-3
+          text-white
+          transition
+          hover:bg-primary-700"
+    >
+      Prendre contact
+    </a>
+  </section>
+  <!-- revoir responsive de cette section + ref button-->
+  <!-- approche personnalisée -->
+  <section class="bg-white py-16 lg:py-24">
+    <div
+      class="mx-auto flex max-w-4xl flex-col items-center gap-10 px-6 lg:px-8"
+    >
+      <h2
+        class="text-center text-2xl font-semibold text-primary-800 lg:text-3xl"
+      >
+        Une approche personnalisée
+      </h2>
+
+      <div class="space-y-6 text-lg leading-8 text-primary-900">
+        <p>
+          Titulaire d'un Master 1 en droit des affaires et d'un Master 2 en
+          droit privé général, parcours droit des affaires, j'ai exercé pendant
+          plus de sept années au sein de cabinets d’avocats en droit des
+          affaires en contentieux et en conseil.
+        </p>
+
+        <p>
+          Par cette expérience, j’ai acquis la certitude que le contentieux est
+          un enjeu stratégique de l'entreprise.
+        </p>
+
+        <p>
+          Chaque dossier fait l'objet d'une analyse approfondie intégrant les
+          enjeux juridiques, financiers, opérationnels et réputationnels afin de
+          construire une stratégie adaptée aux objectifs de l'entreprise et de
+          ses dirigeants.
+        </p>
+      </div>
+
+      <a
+        href="/a-propos"
+        class="w-full rounded-lg bg-primary-600 px-8 py-3 text-center text-white transition hover:bg-primary-700 sm:w-56"
+      >
+        Découvrir mon parcours
+      </a>
+    </div>
+  </section>
+  <!-- revoir responsive de cette section + ref button-->
+  <!-- contentieux outil stratégique -->
+  <section class="relative isolate overflow-hidden">
+    <img
+      src={image2.src}
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 h-full w-full object-cover"
+    />
+
+    <div class="absolute inset-0 bg-primary-900/70"></div>
+
+    <div
+      class="relative mx-auto flex max-w-7xl flex-col items-center px-6 py-20 text-center lg:px-8 lg:py-28"
+    >
+      <div class="max-w-4xl space-y-8">
+        <h2 class="text-2xl font-semibold text-white lg:text-4xl">
+          Le contentieux comme outil stratégique
+        </h2>
+
+        <p class="text-xl text-primary-200">
+          Le contentieux ne se limite pas au procès.
+        </p>
+
+        <div class="space-y-6 text-lg leading-8 text-white">
+          <p>
+            Dans de nombreuses situations, une stratégie adaptée permet de
+            privilégier la négociation, la prévention des risques ou la
+            résolution amiable des litiges.
+          </p>
+
+          <p>
+            Mon rôle consiste à sécuriser la prise de décision des dirigeants et
+            à défendre durablement les intérêts de leur entreprise.
+          </p>
+        </div>
+
+        <a
+          href="/domaines-expertise"
+          class="inline-flex w-full justify-center rounded-lg bg-primary-400 px-8 py-3 font-medium text-primary-900 transition hover:bg-white sm:w-56"
+        >
+          Découvrir mes expertises
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- revoir responsive de cette section -->
+  <!-- Accompagnement -->
+  <section class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <h2
+        class="text-center text-2xl font-semibold text-primary-800 lg:text-left lg:text-3xl"
+      >
+        Un accompagnement en quatre étapes
+      </h2>
+
+      <div class="mt-12">
+        <CardGroup items={steps} />
+      </div>
+    </div>
+  </section>
+
+  <FAQ
+    title="Questions fréquentes"
+    items={[
+      {
+        question: "Quand consulter un avocat en droit des affaires ?",
+        answer:
+          "Dès que vous rencontrez une difficulté, avant même que vous ayez reçu une assignation",
+      },
+      {
+        question: "Les honoraires sont-ils définis à l'avance ?",
+        answer:
+          "Les honoraires sont fixés en fonction de la complexité du litige. Toutefois, le cabinet propose des forfaits définis pour certaines prestations",
+      },
+      {
+        question: "Intervenez-vous uniquement en cas de contentieux ?",
+        answer:
+          "Le cabinet accompagne également les entreprises dans la prévention des risques et la sécurisation de leurs relations contractuelles.",
+      },
+    ]}
+  />
+  <CTA
+    title="Une question juridique ?"
+    description="Parlons de votre situation et trouvons ensemble la stratégie la plus adaptée à vos besoins."
+  />
 </Layout>

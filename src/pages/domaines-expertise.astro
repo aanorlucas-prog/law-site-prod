@@ -1,29 +1,72 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
+import Hero from "../components/Hero.astro";
+import heroImage from "../assets/image2.jpg";
 import CardGroup from "../components/CardGroup.astro";
 
 const steps = [
   {
-    title: "Premier échange",
-    text: "Comprendre votre situation et identifier vos besoins.",
+    title: "Contentieux commerciaux et contractuels",
+    text: "Rupture de relations commerciales, inexécution contractuelle, concurrence déloyale, recouvrement complexe et responsabilité contractuelle.",
   },
   {
-    title: "Analyse",
-    text: "Étude du dossier et évaluation des enjeux juridiques.",
+    title: "Baux commerciaux et actifs stratégiques",
+    text: "Loyers commerciaux, renouvellement, résiliation, indemnité d'éviction, charges et travaux incombant aux parties.",
   },
   {
-    title: "Stratégie",
-    text: "Définition de la solution la plus adaptée à vos objectifs.",
+    title: "Conflits entre associés et gouvernance",
+    text: "Blocages sociétaires, révocation de dirigeants, responsabilité des associés et des mandataires sociaux, garantie d’actif et de passif",
   },
   {
-    title: "Accompagnement",
-    text: "Mise en œuvre de la stratégie et suivi du dossier.",
+    title: "Voies d’exécution",
+    text: "Mesures conservatoires, saisies mobilières, saisies immobilières",
+  },
+  {
+    title: "Entreprises en difficultés",
+    text: "Prévention des difficultés, procédures collectives, défense des créanciers, restructuration et traitement du passif",
+  },
+  {
+    title: "Contentieux bancaire et garanties",
+    text: "Cautionnements, sûretés, responsabilités bancaires, mesures d'exécution et contentieux du financement.",
   },
 ];
 ---
 
 <Layout title="Maître Camille Herlido - Avocat droit des affaires">
-  <p class="text-primary-400">domaines d'expertises</p>
-  <CardGroup items={steps} />
+  <!-- Hero -->
+  <Hero
+    title="Mes domaines d'expertise"
+    description="J'accompagne les entreprises et leurs dirigeants dans leurs problématiques de droit des affaires, tant en conseil qu'en contentieux."
+    image={heroImage}
+  />
+  <!-- Domaines d'expertise -->
+  <section class="flex flex-col items-center p-18 bg-white">
+    <CardGroup items={steps} />
+  </section>
+  <!-- CTA -->
+  <section
+    class="flex flex-col bg-warm-2 p-14 gap-8 items-center justify-center text-center"
+  >
+    <h2 class="text-primary-700 text-lg">
+      Vous vous interrogez sur votre situation ?
+    </h2>
+    <p class="text-primary-900">
+      Chaque dossier est unique. Échangeons afin d'identifier les solutions
+      adaptées à vos besoins.
+    </p>
+    <a
+      href="/contact"
+      class="w-56
+          text-center
+        rounded-lg
+          bg-primary-600
+          px-8
+          py-3
+          text-white
+          transition
+          hover:bg-primary-700"
+    >
+      Me contacter
+    </a>
+  </section>
 </Layout>
