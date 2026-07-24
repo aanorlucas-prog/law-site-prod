@@ -29,7 +29,7 @@ const links = [
   <nav
     class="mx-auto
       flex
-      max-w-7xl
+      max-w-screen-2xl
       items-center
       justify-between
       px-6
@@ -41,7 +41,7 @@ const links = [
       <img
         src={logo.src}
         alt="Maître Camille Herlido - Avocat en droit des affaires"
-        class="h-14 w-auto"
+        class="h-14 md:h-16 lg:h-20 w-auto"
       />
     </a>
     <!-- Bouton menu mobile -->
@@ -64,17 +64,20 @@ const links = [
     </button>
 
     <!-- Menu desktop -->
-    <ul class="hidden
+    <ul
+      class="hidden
         items-center
-        gap-8
-        md:flex">
+        gap-5 lg:gap-6 xl:gap-8
+        md:flex"
+    >
       {
         links.map((link) => (
           <li>
             <a
               href={link.href}
               class="
-                text-sm
+               text-sm
+lg:text-base
                 font-medium
                 text-primary-900
                 transition

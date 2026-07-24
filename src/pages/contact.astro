@@ -7,7 +7,9 @@ import { Phone, Mail, MapPin, Linkedin } from "lucide-astro";
 const formId = "contact-form";
 ---
 
-<Layout title="Maître Camille Herlido - Avocat droit des affaires">
+<Layout
+  title="Contact | Maître Camille Herlido – Avocate en droit des affaires"
+>
   <p class="text-primary-400">contact</p>
   <!-- Hero -->
   <Hero
@@ -17,66 +19,97 @@ const formId = "contact-form";
     image={heroImage}
   />
   <!-- parlons -->
-  <section
-    class="bg-warm-2 flex flex-col items-center justify-center text-center p-16 gap-8"
-  >
-    <h2 class="text-primary-700 text-2xl">Parlons de votre situation</h2>
-    <p class="text-primary-900">
-      Chaque dossier est unique. Un premier échange permet de comprendre votre
-      situation, d'identifier vos besoins et de vous orienter vers la solution
-      la plus adaptée.
-    </p>
+  <section class="bg-warm-2 py-20 lg:py-24">
+    <div
+      class="mx-auto flex max-w-4xl flex-col items-center px-6 text-center lg:px-8"
+    >
+      <h2 class="text-2xl font-semibold text-primary-700 lg:text-3xl">
+        Parlons de votre situation
+      </h2>
+
+      <p class="mt-8 text-lg leading-8 text-primary-900">
+        Chaque dossier est unique. Un premier échange permet de comprendre votre
+        situation, d'identifier vos besoins et de vous orienter vers la solution
+        la plus adaptée.
+      </p>
+    </div>
   </section>
   <!-- infos contact -->
-  <section
-    class="flex flex-col items-center justify-center text-center p-16 gap-14"
-  >
-    <div class="flex flex-col gap-6 md:flex-row">
-      <div
-        class="bg-primary-50 flex flex-col items-center justify-center rounded-lg p-8 text-center min-h-[220px]"
+
+  <section class="bg-white py-20 lg:py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <h2
+        class="text-center text-2xl font-semibold text-primary-700 lg:text-3xl"
       >
-        <div class="flex flex-row gap-4">
-          <Phone class="h-5 w-5 text-primary-800" />
-          <h3 class="text-primary-800">Téléphone</h3>
-        </div>
-        <p class="text-primary-900">06 31 49 98 46</p>
+        Les coordonnées du cabinet
+      </h2>
+
+      <div class="mt-14 flex flex-col gap-6 md:flex-row">
+        <!-- Téléphone -->
+        <article
+          class="flex flex-1 flex-col items-center justify-center rounded-2xl bg-primary-50 p-8 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <Phone class="h-6 w-6 text-primary-700" />
+            <h3 class="text-lg font-semibold text-primary-800">Téléphone</h3>
+          </div>
+
+          <a
+            href="tel:+33631499846"
+            class="mt-6 text-primary-900 transition hover:text-primary-700 hover:underline underline-offset-4"
+          >
+            06&nbsp;31&nbsp;49&nbsp;98&nbsp;46
+          </a>
+        </article>
+
+        <!-- Email -->
+        <article
+          class="flex flex-1 flex-col items-center justify-center rounded-2xl bg-primary-100 p-8 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <Mail class="h-6 w-6 text-primary-700" />
+            <h3 class="text-lg font-semibold text-primary-800">Email</h3>
+          </div>
+
+          <a
+            href="mailto:contact@herlido-avocat.fr"
+            class="mt-6 break-all text-primary-900 transition hover:text-primary-700 hover:underline underline-offset-4"
+          >
+            contact@herlido-avocat.fr
+          </a>
+        </article>
+
+        <!-- Adresse -->
+        <article
+          class="flex flex-1 flex-col items-center justify-center rounded-2xl bg-primary-200 p-8 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+        >
+          <div class="flex items-center gap-3">
+            <MapPin class="h-6 w-6 text-primary-700" />
+            <h3 class="text-lg font-semibold text-primary-800">Cabinet</h3>
+          </div>
+
+          <address class="mt-6 not-italic text-primary-900">
+            2 rue François Jacob<br />
+            22190 Plérin
+          </address>
+        </article>
       </div>
-      <div
-        class="bg-primary-100 flex flex-col items-center justify-center rounded-lg p-8 text-center min-h-[220px]"
-      >
-        <div class="flex flex-row gap-4">
-          <Mail class="h-5 w-5 text-primary-800" />
-          <h3 class="text-primary-800">Email</h3>
-        </div>
-        <p class="text-primary-900">contact@herlido-avocat.fr</p>
-      </div>
-      <div
-        class="bg-primary-200 flex flex-col items-center justify-center rounded-lg p-8 text-center min-h-[220px]"
-      >
-        <div class="flex flex-row gap-4">
-          <MapPin class="h-5 w-5 text-primary-800" />
-          <h3 class="text-primary-800">Cabinet</h3>
-        </div>
-        <p class="text-primary-900">2 rue François Jacob<br /> 22190 Plérin</p>
+
+      <div class="mt-16 text-center">
+        <p class="mb-6 text-primary-900">
+          Vous souhaitez prendre rendez-vous directement ?
+        </p>
+
+        <a
+          href="https://consultation.avocat.fr/avocat-plerin/camille-herlido-43060/prendre-rdv.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex w-72 items-center justify-center rounded-lg bg-primary-600 px-8 py-3 text-white transition hover:bg-primary-700"
+        >
+          Prendre rendez-vous via avocat.fr
+        </a>
       </div>
     </div>
-    <p class="text-primary-900">
-      Vous souhaitez prendre rendez-vous directement ?
-    </p>
-    <a
-      href="/contact"
-      class="w-56
-          text-center
-        rounded-lg
-          bg-primary-600
-          px-8
-          py-3
-          text-white
-          transition
-          hover:bg-primary-700"
-    >
-      Prendre rendez-vous sur avocat.fr
-    </a>
   </section>
   <!-- horaires -->
   <section
@@ -85,20 +118,20 @@ const formId = "contact-form";
     <h2 class="text-primary-700 text-2xl mb-4">Horaires d’ouverture</h2>
     <div>
       <p class="text-primary-800">Lundi - Vendredi</p>
-      <p class="text-primary-900">9h - 18h</p>
+      <span class="text-primary-900">9h - 18h</span>
     </div>
     <div>
       <p class="text-primary-800">Samedi</p>
-      <p class="text-primary-900">Sur demande</p>
+      <span class="text-primary-900">Sur demande</span>
     </div>
     <div>
       <p class="text-primary-800">Dimanche</p>
-      <p class="text-primary-900">Fermé</p>
+      <span class="text-primary-900">Fermé</span>
     </div>
   </section>
   <!-- accessibilité -->
   <section
-    class="bg-white flex flex-col items-center justify-center text-center p-16 gap-6"
+    class="bg-white flex flex-col items-center justify-center text-center p-16 gap-6 mx-auto max-w-4xl"
   >
     <h2 class="text-primary-700 text-2xl">Accessibilité</h2>
     <p class="text-primary-900">
@@ -107,180 +140,156 @@ const formId = "contact-form";
       pas à nous en informer en amont.
     </p>
   </section>
-  <!-- formulaire contact -->
-  <section
-    class="mx-auto
-  w-full
-    px-16
-    py-16 bg-warm-1 flex flex-col items-center"
-  >
-    <h2
-      class="mb-10
-      text-center
-      text-4xl
-      font-light
-      
-      text-primary-800"
-    >
-      Nous écrire
-    </h2>
+  <!-- Formulaire -->
+  <section class="bg-warm-1 py-20 lg:py-24">
+    <div class="mx-auto max-w-3xl px-6 lg:px-8">
+      <h2 class="text-center text-3xl font-light text-primary-800 lg:text-4xl">
+        Nous écrire
+      </h2>
 
-    <form id={formId} class="space-y-6 max-w-3xl">
-      <div>
-        <label for="name" class="mb-2 block text-sm text-primary-900">
-          Nom et Prénom *
-        </label>
-
-        <input
-          id="name"
-          name="name"
-          required
-          class="w-full
-          rounded-lg
-          border
-          border-neutral-200
-          bg-white
-          px-4
-          py-3
-          shadow-sm
-          outline-none
-          focus:border-primary-400
-          text-primary-900"
-        />
-      </div>
-
-      <div>
-        <label for="email" class="mb-2 block text-sm text-primary-900">
-          Adresse e-mail *
-        </label>
-
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          class="w-full
-          rounded-lg
-          border
-          border-neutral-200
-          bg-white
-          px-4
-          py-3
-          shadow-sm
-          outline-none
-          focus:border-primary-400
-          text-primary-900"
-        />
-      </div>
-
-      <div>
-        <label for="phone" class="mb-2 block text-sm text-primary-900">
-          Téléphone (facultatif)
-        </label>
-
-        <input
-          id="phone"
-          name="phone"
-          type="tel"
-          class="w-full
-          rounded-lg
-          border
-          border-neutral-200
-          bg-white
-          px-4
-          py-3
-          shadow-sm
-          outline-none
-          focus:border-primary-400
-          text-primary-900"
-        />
-      </div>
-
-      <div>
-        <label for="subject" class="mb-2 block text-sm text-primary-900">
-          Objet
-        </label>
-
-        <input
-          id="subject"
-          name="subject"
-          class="w-full
-          rounded-lg
-          border
-          border-neutral-200
-          bg-white
-          px-4
-          py-3
-          shadow-sm
-          outline-none
-          focus:border-primary-400
-          text-primary-900"
-        />
-      </div>
-
-      <div>
-        <label for="message" class="mb-2 block text-sm text-primary-900">
-          Votre message *
-        </label>
-
-        <textarea
-          id="message"
-          name="message"
-          required
-          rows="6"
-          class="w-full
-          rounded-lg
-          border
-          border-neutral-200
-          bg-white
-          px-4
-          py-3
-          shadow-sm
-          outline-none
-          focus:border-primary-400
-          text-primary-900"
-        ></textarea>
-      </div>
-
-      <label class="flex items-start gap-3">
-        <input
-          id="consent"
-          name="consent"
-          type="checkbox"
-          required
-          class="mt-1 h-5 w-5"
-        />
-
-        <span class="text-sm text-primary-700">
-          J'accepte que les informations saisies soient utilisées pour répondre
-          à ma demande, conformément à la politique de confidentialité.
-        </span>
-      </label>
-
-      <div id="form-message" class="hidden rounded-lg p-4 text-center"></div>
-
-      <div class="text-center">
-        <button
-          type="submit"
-          class="rounded-lg
-          bg-primary-600
-          px-8
-          py-3
-          text-white
-          transition
-          hover:bg-primary-700"
-        >
-          Envoyer ma demande
-        </button>
-      </div>
-
-      <p class="text-center
-        text-xs
-        text-neutral-500">
-        Les informations transmises via ce formulaire sont utilisées uniquement
-        pour répondre à votre demande.
+      <p class="mx-auto mt-6 max-w-2xl text-center text-primary-900">
+        Décrivez brièvement votre situation. Le cabinet vous recontactera dans
+        les meilleurs délais.
       </p>
-    </form>
+
+      <form id={formId} class="mx-auto mt-12 w-full space-y-6">
+        <!-- Nom -->
+        <div>
+          <label
+            for="name"
+            class="mb-2 block text-sm font-medium text-primary-900"
+          >
+            Nom et prénom *
+          </label>
+
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            autocomplete="name"
+            aria-required="true"
+            class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-primary-900 shadow-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-300"
+          />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label
+            for="email"
+            class="mb-2 block text-sm font-medium text-primary-900"
+          >
+            Adresse e-mail *
+          </label>
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            autocomplete="email"
+            aria-required="true"
+            class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-primary-900 shadow-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-300"
+          />
+        </div>
+
+        <!-- Téléphone -->
+        <div>
+          <label
+            for="phone"
+            class="mb-2 block text-sm font-medium text-primary-900"
+          >
+            Téléphone (facultatif)
+          </label>
+
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            inputmode="tel"
+            class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-primary-900 shadow-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-300"
+          />
+        </div>
+
+        <!-- Objet -->
+        <div>
+          <label
+            for="subject"
+            class="mb-2 block text-sm font-medium text-primary-900"
+          >
+            Objet
+          </label>
+
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            autocomplete="off"
+            class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-primary-900 shadow-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-300"
+          />
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label
+            for="message"
+            class="mb-2 block text-sm font-medium text-primary-900"
+          >
+            Votre message *
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            required
+            aria-required="true"
+            rows="7"
+            maxlength="3000"
+            class="w-full resize-y rounded-lg border border-neutral-300 bg-white px-4 py-3 text-primary-900 shadow-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-300"
+          ></textarea>
+        </div>
+
+        <!-- Consentement -->
+        <div class="flex items-start gap-3">
+          <input
+            id="consent"
+            name="consent"
+            type="checkbox"
+            required
+            class="mt-1 h-5 w-5 rounded border-neutral-300 text-primary-600 focus:ring-primary-300"
+          />
+
+          <label for="consent" class="text-sm leading-6 text-primary-700">
+            J'accepte que les informations saisies soient utilisées uniquement
+            afin de répondre à ma demande, conformément à la politique de
+            confidentialité.
+          </label>
+        </div>
+
+        <!-- Message retour -->
+        <div id="form-message" class="hidden rounded-lg p-4 text-center"></div>
+
+        <!-- Bouton -->
+        <div class="pt-4 text-center">
+          <button
+            type="submit"
+            class="w-full rounded-lg bg-primary-600 px-8 py-3 font-medium text-white transition hover:bg-primary-700 sm:w-auto"
+          >
+            Envoyer ma demande
+          </button>
+        </div>
+
+        <!-- RGPD -->
+        <p
+          class="mx-auto max-w-xl text-center text-xs leading-6 text-neutral-500"
+        >
+          Les informations transmises via ce formulaire sont utilisées
+          exclusivement pour répondre à votre demande. Elles ne sont ni cédées
+          ni vendues à des tiers.
+        </p>
+      </form>
+    </div>
   </section>
 
   <FaqSection

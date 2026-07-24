@@ -2,27 +2,84 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Mentions légales et politique de confidentialité">
+<Layout title="Mentions légales | Maître Camille Herlido">
   <div
     class="mx-auto flex max-w-4xl flex-col gap-14 px-6 py-16 text-primary-900"
   >
     <h1 class="text-3xl text-primary-700 font-light">
       Mentions légales et politique de confidentialité
     </h1>
-    <section class="flex flex-col gap-4">
+    <nav aria-labelledby="toc-title" class="rounded-2xl bg-primary-50 p-6">
+      <h2 id="toc-title" class="text-lg font-semibold text-primary-700">
+        Sommaire
+      </h2>
+
+      <ul class="mt-4 space-y-2">
+        <li>
+          <a href="#editeur" class="hover:text-primary-600">Éditeur du site</a>
+        </li>
+        <li>
+          <a href="#publication" class="hover:text-primary-600"
+            >Directeur de la publication</a
+          >
+        </li>
+        <li>
+          <a href="#hebergement" class="hover:text-primary-600">Hébergement</a>
+        </li>
+        <li>
+          <a href="#propriete" class="hover:text-primary-600"
+            >Propriété intellectuelle</a
+          >
+        </li>
+        <li>
+          <a href="#responsabilite" class="hover:text-primary-600"
+            >Responsabilité</a
+          >
+        </li>
+        <li>
+          <a href="#mediateur" class="hover:text-primary-600"
+            >Médiateur de la consommation de la profession d’avocat</a
+          >
+        </li>
+        <li>
+          <a href="#honoraires" class="hover:text-primary-600">Honoraires</a>
+        </li>
+        <li>
+          <a href="#donnees" class="hover:text-primary-600"
+            >Données personnelles</a
+          >
+        </li>
+        <li><a href="#cookies" class="hover:text-primary-600">Cookies</a></li>
+        <li>
+          <a href="#droit" class="hover:text-primary-600">Droit applicable</a>
+        </li>
+      </ul>
+    </nav>
+    <section id="editeur" class="flex flex-col gap-4">
       <h2 class="text-xl font-semibold">Éditeur du site</h2>
       <div class="leading-7">
         <p class="font-semibold">Maître Camille HERLIDO</p>
         <p>Avocat au Barreau de Saint-Brieuc</p>
         <p>Exercice à titre individuel</p>
-        <div class="mt-4">
+        <address class="not-italic mt-4">
           <p class="font-semibold">Adresse professionnelle</p>
           <p>2 rue François Jacob<br />22190 PLÉRIN</p>
-        </div>
+        </address>
         <div class="mt-4">
-          <p><span class="font-semibold">Téléphone :</span> 06 31 49 98 46</p>
           <p>
-            <span class="font-semibold">Adresse électronique :</span> contact@herlido-avocat.fr
+            <span class="font-semibold">Téléphone : </span>
+            <a href="tel:+33631499846" class="hover:text-primary-600">
+              06&nbsp;31&nbsp;49&nbsp;98&nbsp;46
+            </a>
+          </p>
+          <p>
+            <span class="font-semibold">Adresse électronique : </span>
+            <a
+              href="mailto:contact@herlido-avocat.fr"
+              class="underline underline-offset-4 hover:text-primary-600"
+            >
+              contact@herlido-avocat.fr</a
+            >
           </p>
           <!-- à compléter! -->
           <p><span class="font-semibold">Numéro SIREN :</span> [À compléter]</p>
@@ -38,22 +95,29 @@ import Layout from "../layouts/Layout.astro";
         </p>
       </div>
     </section>
-
-    <section class="flex flex-col gap-4">
+    <section class="border-b border-primary-100 pb-12 last:border-none">
+    </section>
+    <section id="publication" class="flex flex-col gap-4">
       <h2 class="text-xl font-semibold">Directeur de la publication</h2>
       <p>
         Le directeur de la publication est Maître Camille HERLIDO, en qualité
         d’avocat.
       </p>
     </section>
-    <section class="flex flex-col gap-4">
+    <section class="border-b border-primary-100 pb-12 last:border-none">
+    </section>
+    <section id="hebergement" class="flex flex-col gap-4">
       <h2 class="text-xl font-semibold">Hébergement</h2>
       <div class="leading-7">
         <p class="font-medium">Cloudflare, Inc.</p>
-        <p>101 Townsend Street<br />San Francisco, CA 94107<br />États‑Unis</p>
+        <p>
+          101 Townsend Street<br />San Francisco, CA 94107<br />États‑Unis
+        </p>
       </div>
     </section>
-    <section class="flex flex-col gap-4">
+    <section class="border-b border-primary-100 pb-12 last:border-none">
+    </section>
+    <section id="propriete" class="flex flex-col gap-4">
       <h2 class="text-xl font-semibold">Propriété intellectuelle</h2>
       <p>
         L’ensemble des contenus présents sur ce site (textes, photographies,
@@ -63,7 +127,9 @@ import Layout from "../layouts/Layout.astro";
         interdite.
       </p>
     </section>
-    <section class="flex flex-col gap-4">
+    <section class="border-b border-primary-100 pb-12 last:border-none">
+    </section>
+    <section id="responsabilite" class="flex flex-col gap-4">
       <h2 class="text-xl font-semibold">Responsabilité</h2>
       <p>
         Les informations diffusées sur le présent site sont fournies à titre
@@ -75,7 +141,9 @@ import Layout from "../layouts/Layout.astro";
         informations accessibles sur le site.
       </p>
     </section>
-    <section class="flex flex-col gap-4">
+    <section class="border-b border-primary-100 pb-12 last:border-none">
+    </section>
+    <section id="mediateur" class="flex flex-col gap-4">
       <h2 class="text-xl font-semibold">
         Médiateur de la consommation de la profession d’avocat
       </h2>
@@ -85,17 +153,25 @@ import Layout from "../layouts/Layout.astro";
           consommateur a la possibilité de recourir gratuitement au médiateur de
           la consommation de la profession d’avocat.
         </p>
-        <div class="mt-4">
+        <address class="not-italic mt-4">
           <p class="font-medium">
             Médiateur de la consommation de la profession d’avocat
           </p>
           <p>180 boulevard Haussmann<br />75008 Paris</p>
           <p>mediateur-conso@mediateur-consommation-avocat.fr</p>
-          <p>https://mediateur-consommation-avocat.fr</p>
-        </div>
+          <a
+            href="https://mediateur-consommation-avocat.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-primary-600"
+            >https://mediateur-consommation-avocat.fr</a
+          >
+        </address>
       </div>
     </section>
-    <section class="flex flex-col gap-4">
+    <section class="border-b border-primary-100 pb-12 last:border-none">
+    </section>
+    <section id="honoraires" class="flex flex-col gap-4">
       <h2 class="text-xl font-semibold">Honoraires</h2>
       <p>
         Les honoraires du cabinet sont fixés conformément aux dispositions de
@@ -105,7 +181,9 @@ import Layout from "../layouts/Layout.astro";
         applicables.
       </p>
     </section>
-    <section class="flex flex-col gap-4">
+    <section class="border-b border-primary-100 pb-12 last:border-none">
+    </section>
+    <section id="donnees" class="flex flex-col gap-4">
       <h2 class="text-xl font-semibold">Données personnelles</h2>
       <p>
         Les données personnelles collectées par l’intermédiaire du présent site
@@ -125,6 +203,11 @@ import Layout from "../layouts/Layout.astro";
         traitement, d’opposition et de portabilité de ses données personnelles.
       </p>
       <p>
+        Les données transmises via le formulaire de contact sont conservées
+        pendant la durée nécessaire au traitement de la demande et ne sont pas
+        utilisées à des fins commerciales.
+      </p>
+      <p>
         Ces droits peuvent être exercés à l’adresse suivante : <a
           href="mailto:contact@herlido-avocat.fr"
           class="text-primary-700 underline underline-offset-4"
@@ -137,14 +220,21 @@ import Layout from "../layouts/Layout.astro";
         Nationale de l’Informatique et des Libertés (CNIL).
       </p>
     </section>
-    <section class="flex flex-col gap-4">
+    <section class="border-b border-primary-100 pb-12 last:border-none">
+    </section>
+    <!-- revoir avec Camille-> site n'utilise pas de cookies actuellement -->
+    <section id="cookies" class="flex flex-col gap-4">
       <h2 class="text-xl font-semibold">Cookies</h2>
       <p>
-        Le site est susceptible d’utiliser des cookies nécessaires à son bon
-        fonctionnement ainsi que des cookies de mesure d’audience. L’utilisateur
-        peut à tout moment paramétrer son navigateur afin de limiter ou refuser
-        l’utilisation des cookies.
+        Le présent site n'utilise que les cookies strictement nécessaires à son
+        fonctionnement. Aucun cookie publicitaire ou de mesure d'audience n'est
+        déposé sans le consentement préalable de l'utilisateur.
       </p>
+    </section>
+    <section
+      id="droit"
+      class="border-b border-primary-100 pb-12 last:border-none"
+    >
     </section>
     <section class="flex flex-col gap-4">
       <h2 class="text-xl font-semibold">Droit applicable</h2>

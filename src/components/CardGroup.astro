@@ -8,9 +8,10 @@ interface Step {
 
 interface Props {
   items: Step[];
+  layoutClass?: string;
 }
 
-const { items } = Astro.props;
+const { items, layoutClass = "flex flex-col gap-6 md:flex-row" } = Astro.props;
 
 const themes = [
   {
@@ -46,7 +47,7 @@ const themes = [
 ];
 ---
 
-<div class="flex flex-col gap-6 md:flex-row">
+<div class={layoutClass}>
   {
     items.map((item, index) => {
       const theme = themes[Math.min(index, themes.length - 1)];

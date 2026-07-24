@@ -35,81 +35,141 @@ const method = [
 ];
 ---
 
-<Layout title="Maître Camille Herlido - Avocat droit des affaires">
+<Layout
+  title="Honoraires | Maître Camille Herlido – Avocate en droit des affaires"
+>
   <!-- Hero -->
   <Hero
     title="Honoraires"
     description="Une relation de confiance repose également sur une information claire et transparente concernant les honoraires."
     image={heroImage}
   />
-  <!-- revoir responsive de cette section -->
-  <!-- transparence -->
-  <section class="flex flex-col items-center text-center p-18 bg-warm-1 gap-8">
-    <h2 class="text-primary-700 text-xl">La transparence avant tout</h2>
-    <p class="text-primary-900">
-      Les honoraires du cabinet sont déterminés conformément aux règles
-      déontologiques applicables à la profession d'avocat.
-    </p>
-    <p class="text-primary-900">
-      Avant toute intervention, une convention d'honoraires est proposée afin de
-      définir les modalités de rémunération et de garantir une parfaite
-      transparence.
-    </p>
-  </section>
-  <!-- revoir responsive de cette section -->
-  <!-- critères -->
-  <section class="flex flex-col items-center p-18 bg-white gap-8">
-    <h2 class="text-primary-700 text-xl">Les critères pris en compte</h2>
-    <CardGroup items={data} />
-  </section>
-  <!-- revoir responsive de cette section -->
-  <!-- convention d'honoraire -->
-  <section class="flex flex-col items-center text-center p-18 bg-warm-2 gap-4">
-    <h2 class="text-primary-700 text-2xl pb-8">
-      Une convention d'honoraires systématiquement proposée
-    </h2>
-    <p class="text-primary-900">
-      Avant toute intervention, une convention d'honoraires est remise au
-      client.
-    </p>
-    <p class="text-primary-900">Elle précise notamment :</p>
-    <ul class="list-disc space-y-2 pl-6 text-left text-primary-900">
-      <li>la mission confiée</li>
-      <li>les modalités de calcul des honoraires</li>
-      <li>les frais éventuels</li>
-      <li>les conditions d'intervention</li>
-    </ul>
-  </section>
-  <!-- revoir responsive de cette section -->
-  <!-- modes de facturation -->
-  <section class="flex flex-col items-center p-18 bg-white gap-8">
-    <h2 class="text-primary-700 text-xl">Les modalités de facturation</h2>
-    <CardGroup items={method} />
-  </section>
 
-  <FAQ
-    title="Questions fréquentes"
-    items={[
-      {
-        question:
-          "Les honoraires sont-ils communiqués avant toute intervention ?",
-        answer:
-          "Oui. Les modalités de facturation sont définies dans une convention d'honoraires remise avant le début de la mission.",
-      },
-      {
-        question: "Puis-je demander un devis ?",
-        answer:
-          "Selon la nature de votre demande, une estimation ou un forfait pourra être envisagé après un premier échange.",
-      },
-      {
-        question: "Comment se déroule le premier échange ?",
-        answer:
-          "Le premier échange permet de comprendre votre situation, d'identifier vos besoins et de vous informer sur les modalités d'intervention du cabinet.",
-      },
-    ]}
-  />
-  <CTA
-    title="Une question concernant les honoraires ?"
-    description="N'hésitez pas à prendre contact afin d'échanger sur votre situation et les modalités d'accompagnement envisageables."
-  />
+  <!-- transparence -->
+  <section class="bg-warm-1 py-20 lg:py-24">
+    <div
+      class="mx-auto flex max-w-4xl flex-col items-center px-6 text-center lg:px-8"
+    >
+      <h2 class="text-2xl font-semibold text-primary-700 lg:text-3xl">
+        La transparence avant tout
+      </h2>
+
+      <div class="mt-8 space-y-6 text-lg leading-8 text-primary-900">
+        <p>
+          Les honoraires du cabinet sont déterminés conformément aux règles
+          déontologiques applicables à la profession d'avocat.
+        </p>
+
+        <p>
+          Avant toute intervention, une convention d'honoraires est proposée
+          afin de définir les modalités de rémunération et de garantir une
+          parfaite transparence.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- critères -->
+  <section class="bg-white py-20 lg:py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <h2
+        class="text-center text-2xl font-semibold text-primary-700 lg:text-3xl"
+      >
+        Les critères pris en compte
+      </h2>
+
+      <p
+        class="mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-primary-900"
+      >
+        Les honoraires sont fixés en tenant compte de plusieurs éléments,
+        conformément aux règles applicables à la profession d'avocat.
+      </p>
+
+      <div class="mt-12">
+        <CardGroup items={data} />
+      </div>
+    </div>
+  </section>
+  <!-- convention d'honoraire -->
+  <section class="bg-warm-2 py-20 lg:py-24">
+    <div
+      class="mx-auto flex max-w-3xl flex-col items-center px-6 text-center lg:px-8"
+    >
+      <h2 class="text-2xl font-semibold text-primary-700 lg:text-3xl">
+        Une convention d'honoraires systématiquement proposée
+      </h2>
+
+      <div class="mt-8 space-y-6 text-lg leading-8 text-primary-900">
+        <p>
+          Avant toute intervention, une convention d'honoraires est remise au
+          client.
+        </p>
+
+        <p>Elle précise notamment :</p>
+      </div>
+
+      <ul
+        aria-label="Contenu de la convention d'honoraires"
+        class="mt-8 list-disc space-y-3 pl-6 text-left text-primary-900 marker:text-primary-600"
+      >
+        <li>la mission confiée ;</li>
+        <li>les modalités de calcul des honoraires ;</li>
+        <li>les frais éventuels ;</li>
+        <li>les conditions d'intervention.</li>
+      </ul>
+    </div>
+  </section>
+  <!-- modes de facturation -->
+  <section class="bg-white py-20 lg:py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <h2
+        class="text-center text-2xl font-semibold text-primary-700 lg:text-3xl"
+      >
+        Les modalités de facturation
+      </h2>
+
+      <p
+        class="mx-auto mt-6 max-w-3xl text-center text-lg leading-8 text-primary-900"
+      >
+        Selon la nature de la mission confiée, différentes modalités de
+        facturation peuvent être envisagées.
+      </p>
+
+      <div class="mt-12">
+        <CardGroup items={method} />
+      </div>
+    </div>
+  </section>
+  <section class="bg-warm-3 py-20 lg:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <FAQ
+        title="Questions fréquentes"
+        items={[
+          {
+            question:
+              "Les honoraires sont-ils communiqués avant toute intervention ?",
+            answer:
+              "Oui. Les modalités de facturation sont définies dans une convention d'honoraires remise avant le début de la mission.",
+          },
+          {
+            question: "Puis-je demander un devis ?",
+            answer:
+              "Selon la nature de votre demande, une estimation ou un forfait pourra être envisagé après un premier échange.",
+          },
+          {
+            question: "Comment se déroule le premier échange ?",
+            answer:
+              "Le premier échange permet de comprendre votre situation, d'identifier vos besoins et de vous informer sur les modalités d'intervention du cabinet.",
+          },
+        ]}
+      />
+    </div>
+  </section>
+  <section class="py-20 lg:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-8">
+      <CTA
+        title="Une question concernant les honoraires ?"
+        description="N'hésitez pas à prendre contact afin d'échanger sur votre situation et les modalités d'accompagnement envisageables."
+      />
+    </div>
+  </section>
 </Layout>
