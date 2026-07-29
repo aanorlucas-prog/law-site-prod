@@ -8,7 +8,8 @@ const formId = "contact-form";
 ---
 
 <Layout
-  title="Contact | Maître Camille Herlido – Avocate en droit des affaires"
+  title="Contact | Maître Camille Herlido"
+  description="Contactez Maître Camille Herlido, avocate en droit des affaires à Plérin. Prenez rendez-vous pour échanger sur votre problématique juridique."
 >
   <p class="text-primary-400">contact</p>
   <!-- Hero -->
@@ -165,12 +166,19 @@ const formId = "contact-form";
           <input
             id="name"
             name="name"
+            aria-describedby="name-error"
             type="text"
             required
             autocomplete="name"
             aria-required="true"
             class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-primary-900 shadow-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-300"
           />
+          <p
+            id="name-error"
+            role="alert"
+            class="hidden mt-2 rounded-lg bg-red-100 p-3 text-sm text-red-700"
+          >
+          </p>
         </div>
 
         <!-- Email -->
@@ -185,12 +193,19 @@ const formId = "contact-form";
           <input
             id="email"
             name="email"
+            aria-describedby="email-error"
             type="email"
             required
             autocomplete="email"
             aria-required="true"
             class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-primary-900 shadow-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-300"
           />
+          <p
+            id="email-error"
+            role="alert"
+            class="hidden mt-2 rounded-lg bg-red-100 p-3 text-sm text-red-700"
+          >
+          </p>
         </div>
 
         <!-- Téléphone -->
@@ -205,11 +220,18 @@ const formId = "contact-form";
           <input
             id="phone"
             name="phone"
+            aria-describedby="phone-error"
             type="tel"
             autocomplete="tel"
             inputmode="tel"
             class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-primary-900 shadow-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-300"
           />
+          <p
+            id="phone-error"
+            role="alert"
+            class="hidden mt-2 rounded-lg bg-red-100 p-3 text-sm text-red-700"
+          >
+          </p>
         </div>
 
         <!-- Objet -->
@@ -224,10 +246,17 @@ const formId = "contact-form";
           <input
             id="subject"
             name="subject"
+            aria-describedby="subject-error"
             type="text"
             autocomplete="off"
             class="w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-primary-900 shadow-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-300"
           />
+          <p
+            id="subject-error"
+            role="alert"
+            class="hidden mt-2 rounded-lg bg-red-100 p-3 text-sm text-red-700"
+          >
+          </p>
         </div>
 
         <!-- Message -->
@@ -242,12 +271,19 @@ const formId = "contact-form";
           <textarea
             id="message"
             name="message"
+            aria-describedby="message-error"
             required
             aria-required="true"
             rows="7"
             maxlength="3000"
             class="w-full resize-y rounded-lg border border-neutral-300 bg-white px-4 py-3 text-primary-900 shadow-sm outline-none transition focus:border-primary-500 focus:ring-2 focus:ring-primary-300"
           ></textarea>
+          <p
+            id="message-error"
+            role="alert"
+            class="hidden mt-2 rounded-lg bg-red-100 p-3 text-sm text-red-700"
+          >
+          </p>
         </div>
 
         <!-- Consentement -->
@@ -255,9 +291,11 @@ const formId = "contact-form";
           <input
             id="consent"
             name="consent"
-            type="checkbox"
             required
-            class="mt-1 h-5 w-5 rounded border-neutral-300 text-primary-600 focus:ring-primary-300"
+            aria-describedby="consent-error"
+            type="checkbox"
+            class="mt-1 h-5 w-5 rounded border-neutral-300 text-primary-600 focus:border-primary-500 focus:ring-2 focus:ring-primary-300
+transition"
           />
 
           <label for="consent" class="text-sm leading-6 text-primary-700">
@@ -266,6 +304,12 @@ const formId = "contact-form";
             confidentialité.
           </label>
         </div>
+        <p
+          id="consent-error"
+          role="alert"
+          class="hidden mt-2 rounded-lg bg-red-100 p-3 text-sm text-red-700"
+        >
+        </p>
 
         <!-- Message retour -->
         <div id="form-message" class="hidden rounded-lg p-4 text-center"></div>
@@ -273,8 +317,9 @@ const formId = "contact-form";
         <!-- Bouton -->
         <div class="pt-4 text-center">
           <button
+            id="submit-button"
             type="submit"
-            class="w-full rounded-lg bg-primary-600 px-8 py-3 font-medium text-white transition hover:bg-primary-700 sm:w-auto"
+            class="w-full rounded-lg bg-primary-600 px-8 py-3 font-medium text-white transition hover:bg-primary-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           >
             Envoyer ma demande
           </button>
@@ -313,42 +358,296 @@ const formId = "contact-form";
     ]}
   />
 </Layout>
-<!-- <script>
-  const form = document.querySelector("#contact-form");
-  const feedback = document.querySelector("#form-message");
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const form = document.getElementById("contact-form");
+    const formMessage = document.getElementById("form-message");
+    const submitButton = document.getElementById("submit-button");
 
-  form?.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    if (!form || !formMessage) return;
 
-    const formData = new FormData(form);
+    /*
+    |--------------------------------------------------------------------------
+    | Configuration des champs surveillés
+    |--------------------------------------------------------------------------
+   
+    */
 
-    feedback.classList.add("hidden");
+    const fields = {
+      name: {
+        element: document.getElementById("name"),
+        error: document.getElementById("name-error"),
+        message: "Veuillez renseigner votre nom et prénom.",
+      },
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        body: formData,
+      email: {
+        element: document.getElementById("email"),
+        error: document.getElementById("email-error"),
+        message: "Veuillez renseigner une adresse e-mail valide.",
+      },
+
+      message: {
+        element: document.getElementById("message"),
+        error: document.getElementById("message-error"),
+        message: "Veuillez renseigner votre message.",
+      },
+
+      consent: {
+        element: document.getElementById("consent"),
+        error: document.getElementById("consent-error"),
+        message:
+          "Vous devez accepter le traitement de vos données avant d'envoyer votre demande.",
+      },
+    };
+
+    /*
+    |--------------------------------------------------------------------------
+    | Affichage d'une erreur sur un champ
+    |--------------------------------------------------------------------------
+    */
+
+    function showFieldError(field, customMessage = null) {
+      const { element, error, message } = field;
+
+      if (!element || !error) return;
+
+      error.textContent = customMessage ?? message;
+      error.classList.remove("hidden");
+
+      element.classList.add("border-red-400");
+      element.classList.add("ring-2");
+      element.classList.add("ring-red-200");
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Suppression d'une erreur sur un champ
+    |--------------------------------------------------------------------------
+    */
+
+    function clearFieldError(field) {
+      const { element, error } = field;
+
+      if (!element || !error) return;
+
+      error.textContent = "";
+      error.classList.add("hidden");
+
+      element.classList.remove("border-red-400");
+      element.classList.remove("ring-2");
+      element.classList.remove("ring-red-200");
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Gestion des erreurs natives HTML5
+    |--------------------------------------------------------------------------
+    */
+
+    form.addEventListener(
+      "invalid",
+      (event) => {
+        event.preventDefault();
+
+        const field = event.target;
+
+        const config = Object.values(fields).find(
+          (item) => item.element === field,
+        );
+
+        if (!config) return;
+
+        showFieldError(config);
+      },
+      true,
+    );
+
+    /*
+    |--------------------------------------------------------------------------
+    | Suppression automatique de l'erreur
+    |--------------------------------------------------------------------------
+    */
+
+    Object.values(fields).forEach((field) => {
+      const { element } = field;
+
+      if (!element) return;
+
+      element.addEventListener("input", () => {
+        clearFieldError(field);
       });
 
-      const data = await response.json();
+      element.addEventListener("change", () => {
+        clearFieldError(field);
+      });
+    });
 
-      feedback.textContent = data.message;
+    /*
+    |--------------------------------------------------------------------------
+    | fonction pour désactiver/activer bouton
+    |--------------------------------------------------------------------------
+    */
 
-      feedback.classList.remove("hidden");
+    function setLoading(isLoading) {
+      if (!submitButton) return;
 
-      if (response.ok) {
-        feedback.className =
-          "rounded-lg bg-green-100 p-4 text-center text-green-700";
+      submitButton.disabled = isLoading;
 
+      submitButton.textContent = isLoading
+        ? "Envoi en cours..."
+        : "Envoyer ma demande";
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Envoi du formulaire
+    |--------------------------------------------------------------------------
+    */
+
+    form.addEventListener("submit", async (event) => {
+      /*
+      | Sécurité :
+      | on laisse HTML5 vérifier les required avant l'envoi
+      */
+
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        return;
+      }
+
+      event.preventDefault();
+
+      clearFormErrors();
+      setLoading(true);
+
+      const formData = new FormData(form);
+
+      const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        subject: formData.get("subject"),
+        message: formData.get("message"),
+
+        // Une checkbox renvoie "on" si cochée
+        consent: formData.get("consent") === "on",
+      };
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+
+        /*
+        | Erreurs venant de Zod
+        */
+
+        if (!response.ok) {
+          if (result.errors) {
+            displayErrors(result.errors);
+            setLoading(false);
+            return;
+          }
+
+          showMessage(result.error ?? "Une erreur est survenue.", false);
+          setLoading(false);
+          return;
+        }
+
+        /*
+        | Succès
+        */
+
+        showMessage(
+          "Votre demande a bien été envoyée. Le cabinet vous répondra dans les meilleurs délais.",
+          true,
+        );
+        setLoading(false);
         form.reset();
+      } catch (error) {
+        setLoading(false);
+        showMessage(
+          "Impossible d'envoyer votre demande actuellement. Veuillez réessayer plus tard.",
+          false,
+        );
+      }
+    });
+
+    /*
+    |--------------------------------------------------------------------------
+    | Affichage des erreurs Zod
+    |--------------------------------------------------------------------------
+    */
+
+    function displayErrors(errors) {
+      Object.entries(errors).forEach(([field, messages]) => {
+        // Récupération du message d'erreur
+        const errorElement = document.getElementById(`${field}-error`);
+
+        // Récupération de l'input concerné
+        const inputElement = document.getElementById(field);
+
+        if (!errorElement) {
+          console.warn(`Pas d'élément erreur trouvé pour ${field}`);
+          return;
+        }
+
+        // Affichage du message
+        errorElement.textContent = messages[0];
+        errorElement.classList.remove("hidden");
+
+        // Ajout du style erreur sur le champ
+        if (inputElement) {
+          inputElement.classList.add(
+            "border-red-400",
+            "ring-2",
+            "ring-red-200",
+          );
+        }
+      });
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Nettoyage complet des erreurs
+    |--------------------------------------------------------------------------
+    */
+
+    function clearFormErrors() {
+      Object.values(fields).forEach((field) => {
+        clearFieldError(field);
+      });
+
+      formMessage.classList.add("hidden");
+      formMessage.textContent = "";
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Message global succès / erreur
+    |--------------------------------------------------------------------------
+    */
+
+    function showMessage(text, success) {
+      formMessage.classList.remove("hidden");
+
+      if (success) {
+        formMessage.className =
+          "rounded-lg bg-green-100 p-4 text-center text-green-700";
       } else {
-        feedback.className =
+        formMessage.className =
           "rounded-lg bg-red-100 p-4 text-center text-red-700";
       }
-    } catch {
-      feedback.textContent = "Une erreur est survenue. Veuillez réessayer.";
 
-      feedback.className = "rounded-lg bg-red-100 p-4 text-center text-red-700";
+      formMessage.textContent = text;
     }
   });
-</script> -->
+</script>

@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { SearchX } from "lucide-astro";
+---
+
+<Layout title="Page introuvable">
+  <section
+    class="relative flex min-h-[75vh] items-center justify-center overflow-hidden bg-warm-1 px-6 py-20"
+  >
+    <!-- 404 géant -->
+    <div
+      aria-hidden="true"
+      class="absolute inset-0 flex items-center justify-center pointer-events-none"
+    >
+      <span
+        class="font-bold leading-none text-primary-200 opacity-60"
+        style="font-size: clamp(12rem, 38vw, 32rem);"
+      >
+        404
+      </span>
+    </div>
+    <!-- Contenu -->
+    <div class="relative z-10 mx-auto max-w-2xl text-center">
+      <h1 class="text-4xl font-light text-primary-800 lg:text-5xl">
+        Page introuvable
+      </h1>
+
+      <p class="mx-auto mt-6 max-w-xl leading-8 text-primary-900">
+        La page que vous recherchez n'existe pas ou a été déplacée. Vous pouvez
+        revenir à l'accueil ou prendre contact avec le cabinet si vous
+        recherchez une information particulière.
+      </p>
+
+      <div class="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
+        <a
+          href="/"
+          class="rounded-lg bg-primary-600 px-8 py-3 text-white transition hover:bg-primary-700"
+        >
+          Retour à l'accueil
+        </a>
+
+        <a
+          href="/contact"
+          class="rounded-lg border border-primary-600 px-8 py-3 text-primary-700 transition hover:bg-primary-50"
+        >
+          Nous contacter
+        </a>
+      </div>
+      <p class="mt-10 text-sm text-primary-600">
+        Si vous avez saisi l'adresse manuellement, vérifiez qu'elle ne comporte
+        pas d'erreur.
+      </p>
+    </div>
+  </section>
+</Layout>
