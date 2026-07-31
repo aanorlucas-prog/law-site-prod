@@ -1,13 +1,13 @@
 import type { APIRoute } from "astro";
-import type { success } from "astro:schema";
+// import type { success } from "astro:schema";
 import { Resend } from "resend";
 import { ContactSchema } from "../../lib/contactSchema";
 
 export const prerender = false;
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
-const CONTACT_EMAIL =import.meta.env.CONTACT_EMAIL;
 export const POST: APIRoute = async ({ request }) => {
+  const resend = new Resend(import.meta.env.RESEND_API_KEY);
+  const CONTACT_EMAIL =import.meta.env.CONTACT_EMAIL;
 
     try {
         const body = await request.json();
