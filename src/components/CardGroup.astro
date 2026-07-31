@@ -47,7 +47,7 @@ const themes = [
 ];
 ---
 
-<div class={layoutClass}>
+<div class={`${layoutClass}`}>
   {
     items.map((item, index) => {
       const theme = themes[Math.min(index, themes.length - 1)];

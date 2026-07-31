@@ -51,9 +51,8 @@ const { title, items } = Astro.props;
                 max-w-2xl
                 text-primary-700
               "
-            >
-              {item.answer}
-            </p>
+              set:html={item.answer}
+            ></p>
           </article>
         ))
       }

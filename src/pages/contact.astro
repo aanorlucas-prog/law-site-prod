@@ -11,7 +11,6 @@ const formId = "contact-form";
   title="Contact | Maître Camille Herlido"
   description="Contactez Maître Camille Herlido, avocate en droit des affaires à Plérin. Prenez rendez-vous pour échanger sur votre problématique juridique."
 >
-  <p class="text-primary-400">contact</p>
   <!-- Hero -->
   <Hero
     title="Contact"
@@ -84,15 +83,22 @@ const formId = "contact-form";
         <article
           class="flex flex-1 flex-col items-center justify-center rounded-2xl bg-primary-200 p-8 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
         >
-          <div class="flex items-center gap-3">
-            <MapPin class="h-6 w-6 text-primary-700" />
-            <h3 class="text-lg font-semibold text-primary-800">Cabinet</h3>
-          </div>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=2+rue+François+Jacob+22190+Plérin"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="items-center justify-center cursor-pointer transition hover:text-primary-700 hover:underline underline-offset-4"
+          >
+            <div class="flex items-center gap-3">
+              <MapPin class="h-6 w-6 text-primary-700" />
+              <h3 class="text-lg font-semibold text-primary-800">Cabinet</h3>
+            </div>
 
-          <address class="mt-6 not-italic text-primary-900">
-            2 rue François Jacob<br />
-            22190 Plérin
-          </address>
+            <address class="mt-6 not-italic text-primary-900">
+              2 rue François Jacob<br />
+              22190 Plérin
+            </address>
+          </a>
         </article>
       </div>
 
@@ -319,7 +325,7 @@ transition"
           <button
             id="submit-button"
             type="submit"
-            class="w-full rounded-lg bg-primary-600 px-8 py-3 font-medium text-white transition hover:bg-primary-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+            class="w-full rounded-lg bg-primary-600 px-8 py-3 font-medium text-white transition hover:bg-primary-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto cursor-pointer"
           >
             Envoyer ma demande
           </button>
@@ -353,7 +359,7 @@ transition"
       {
         question: "Puis-je prendre rendez-vous directement ?",
         answer:
-          "Oui. Vous pouvez utiliser le lien vers avocat.fr ou contacter directement le cabinet.",
+          "Oui. Vous pouvez utiliser le lien vers  <a href='https://consultation.avocat.fr/avocat-plerin/camille-herlido-43060/prendre-rdv.html' target='_blank' rel='noopener noreferrer' class='text-primary-600 underline hover:text-primary-700'>avocat.fr</a> ou contacter directement le cabinet.",
       },
     ]}
   />
