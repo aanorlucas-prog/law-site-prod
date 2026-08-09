@@ -157,8 +157,7 @@ export const POST: APIRoute = async ({ request }) => {
 });
   if (error) { 
     console.error("Erreur Resend :", error);
-     return new Response( 
-      JSON.stringify({ success: false, error: "L'envoi du message a échoué.", }),
+     return new Response( JSON.stringify({ success: false, resendError: error, }),
       { status: 500, headers: { "Content-Type": "application/json", },
      } ); }
 
@@ -169,7 +168,7 @@ console.log("Email envoyé avec succès :", data);
   { status: 200,
      headers: { "Content-Type": "application/json", },
      } );
-     
+
   } catch (error) {
     return new Response(
       JSON.stringify({
