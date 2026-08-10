@@ -38,10 +38,8 @@ export const POST: APIRoute = async ({ request }) => {
 } = result.data;
 
  const { data, error } = await resend.emails.send({
-  from: "Site internet <onboarding@resend.dev>",
-  //  "Cabinet Maître Camille Herlido <contact@herlido-avocat.fr>"
-  // to: CONTACT_EMAIL,
-  to: "delivered@resend.dev",
+  from: "Site Maître Camille Herlido <contact@herlido-avocat.fr>",
+  to: CONTACT_EMAIL,
   replyTo: email,
   subject: subject || `Nouvelle demande de contact - ${name}`,
 
