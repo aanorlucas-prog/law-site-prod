@@ -1,5 +1,4 @@
 import type { APIRoute } from "astro";
-// import type { success } from "astro:schema";
 import { Resend } from "resend";
 import { ContactSchema } from "../../lib/contactSchema";
 
