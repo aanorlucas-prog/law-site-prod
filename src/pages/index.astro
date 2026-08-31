@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import CTA from "../components/CTA.astro";
 import FAQ from "../components/FAQ.astro";
 import CardGroup from "../components/CardGroup.astro";
+import photo from "../assets/camille.jpg";
 
 const steps = [
   {
@@ -223,26 +224,36 @@ import { Check } from "lucide-astro";
       >
         Une approche personnalisée
       </h2>
+      <div
+        class="flex flex-col md:flex-row-reverse items-center justify-center gap-16"
+      >
+        <div class="shrink-0">
+          <img
+            src={photo.src}
+            alt="Portrait de Maître Camille Herlido, avocate en droit des affaires"
+            class="w-48 rounded-2xl object-cover shadow-lg sm:w-80 lg:w-[300px] xl:w-[300px]"
+          />
+        </div>
+        <div class="space-y-6 text-lg leading-8 text-primary-900">
+          <p>
+            Titulaire d'un Master 1 en droit des affaires et d'un Master 2 en
+            droit privé général, parcours droit des affaires, j'ai exercé
+            pendant plus de sept années au sein de cabinets d’avocats en droit
+            des affaires en contentieux et en conseil.
+          </p>
 
-      <div class="space-y-6 text-lg leading-8 text-primary-900">
-        <p>
-          Titulaire d'un Master 1 en droit des affaires et d'un Master 2 en
-          droit privé général, parcours droit des affaires, j'ai exercé pendant
-          plus de sept années au sein de cabinets d’avocats en droit des
-          affaires en contentieux et en conseil.
-        </p>
+          <p>
+            Par cette expérience, j’ai acquis la certitude que le contentieux
+            est un enjeu stratégique de l'entreprise.
+          </p>
 
-        <p>
-          Par cette expérience, j’ai acquis la certitude que le contentieux est
-          un enjeu stratégique de l'entreprise.
-        </p>
-
-        <p>
-          Chaque dossier fait l'objet d'une analyse approfondie intégrant les
-          enjeux juridiques, financiers, opérationnels et réputationnels afin de
-          construire une stratégie adaptée aux objectifs de l'entreprise et de
-          ses dirigeants.
-        </p>
+          <p>
+            Chaque dossier fait l'objet d'une analyse approfondie intégrant les
+            enjeux juridiques, financiers, opérationnels et réputationnels afin
+            de construire une stratégie adaptée aux objectifs de l'entreprise et
+            de ses dirigeants.
+          </p>
+        </div>
       </div>
 
       <a
